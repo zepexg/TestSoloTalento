@@ -4,6 +4,6 @@ namespace Data.Interface
 {
     public interface IClienteRepository : IGeneralRepository<ClientesModel>
     {
-        void Edit(ClientesModel cliente);
+        void Edit(ClientesModel Reg);
     }
 }

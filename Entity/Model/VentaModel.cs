@@ -1,9 +1,10 @@
 ﻿namespace Entity.Model
 {
-    public class ArticuloClienteModel
+    public class VentaModel
     {
-        public Guid ArticuloId { get; set; }
+        public Guid ID { get; set; }
         public Guid ClienteId { get; set; }
         public DateTime Fecha { get; set; }
+        public double Total { get; set; }
     }
 }

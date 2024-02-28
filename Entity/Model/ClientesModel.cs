@@ -2,7 +2,7 @@
 
 namespace Entity.Model
 {
-    public class ClientesModel : IGeneral, ICliente, IUsuario
+    public class ClientesModel : ICliente
     {
         public Guid ID { get; set; }
         public string Nombre { get; set; }

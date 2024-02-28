@@ -1,5 +1,4 @@
-﻿using Entity.Interface;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace Data.Interface
 {
