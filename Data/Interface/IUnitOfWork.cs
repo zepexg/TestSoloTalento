@@ -3,6 +3,7 @@
     public interface IUnitOfWork
     {
         IClienteRepository Clientes { get; }
+        ITiendaRepository Tiendas { get; }
         void Guardar();
     }
 }
