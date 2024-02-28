@@ -12,9 +12,11 @@ namespace Data.UnitOfWork
         {
             _context = context;
             Clientes = new ClienteRepository(_context);
+            Tiendas = new TiendaRepository(_context);
         }
 
         public IClienteRepository Clientes { get; }
+        public ITiendaRepository Tiendas { get; }
 
         public void Guardar()
         {
