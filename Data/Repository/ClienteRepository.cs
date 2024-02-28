@@ -12,7 +12,7 @@ namespace Data.Repository
         {
             try
             {
-                var cliente = _context.Clientes.Find(Reg);
+                var cliente = _context.Clientes.Find(Reg.ID);
                 if (cliente != null) { 
                     cliente.Apellidos = Reg.Apellidos;
                     cliente.Nombre = Reg.Nombre;
