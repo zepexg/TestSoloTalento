@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm">
+    <h2>Ingresar</h2>
+  
+    <label for="usr">Usuario: </label>
+    <input id="usr" type="text" formControlName="usr">
+
+    <div *ngIf="usr.invalid && (usr.dirty || usr.touched)" class="text-danger" >
+        <div *ngIf="usr.errors?.['required']">El usuario es requerido.</div>
+    </div>
+  
+    <label for="pwd">Contraseña: </label>
+    <input id="pwd" type="password" formControlName="pwd">
+
+    <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)" class="text-danger" >
+        <div *ngIf="pwd.errors?.['required']">La contrseña es requerida.</div>
+    </div>
+
+    <button type="submit" (click)="login()" class="btn btn-primary">Iniciar Sesión</button>
+
+</form>

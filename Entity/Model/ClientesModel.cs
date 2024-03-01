@@ -1,4 +1,5 @@
 ﻿using Entity.Interface;
+using System.Text.Json.Serialization;
 
 namespace Entity.Model
 {
@@ -10,5 +11,8 @@ namespace Entity.Model
         public string Direccion { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
+
+        [JsonIgnore]
+        public List<VentaModel>? Ventas { get; set; }
     }
 }

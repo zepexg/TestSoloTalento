@@ -13,10 +13,11 @@ namespace Bussiness.Service
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(TiendaModel value)
+        public TiendaModel Add(TiendaModel value)
         {
-            _unitOfWork.Tiendas.Add(value);
+            var res = _unitOfWork.Tiendas.Add(value);
             _unitOfWork.Guardar();
+            return res;
         }
 
         public void Edit(TiendaModel value)

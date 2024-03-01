@@ -6,7 +6,7 @@ namespace Data.Interface
     {
         List<T> GetAll();
         List<T> GetById(Expression<Func<T, bool>> expression);
-        void Add(T Reg);
+        T Add(T Reg);
         void Delete(T Reg);
     }
 }

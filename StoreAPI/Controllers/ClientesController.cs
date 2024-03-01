@@ -49,5 +49,19 @@ namespace StoreAPI.Controllers
             _service.DeleteCliente(value);
             return Ok();
         }
+
+        [HttpGet("login")]
+        public IActionResult Login(string Usuario, string Pasword)
+        {
+            var res = _service.GetLogin(Usuario, Pasword);
+            if (res != null)
+            {
+                return Ok(res);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }

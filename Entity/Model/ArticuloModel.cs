@@ -1,4 +1,5 @@
 ﻿using Entity.Interface;
+using System.Text.Json.Serialization;
 
 namespace Entity.Model
 {
@@ -10,5 +11,8 @@ namespace Entity.Model
         public decimal Precio { get; set; }
         public string Imagen { get; set; }
         public int Stock { get; set; }
+
+        [JsonIgnore]
+        public List<TiendaModel>? Tiendas { get; }
     }
 }
