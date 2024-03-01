@@ -1,0 +1,66 @@
+.navbar{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    background-color: #201919;
+    color: white;
+
+    &-user{
+        position: relative;
+        margin-right: 1rem;
+        flex-direction: row;
+        &-login{
+            position: relative;
+            left:8.5px;
+            top:-2.2rem;
+            flex-direction: row;
+            padding-left: 1.5rem;
+        }
+    }
+
+    &-cart{
+        position: relative;
+        margin-right: 1rem;
+        &-items{
+            position: sticky;
+            left:8.5px;
+            color:white;
+            border: 1px solid rgb(255, 255, 255, 0.1);
+            border-radius: 50%;
+            background-color: red;
+            height: 20px;
+            width: 20px;
+            p{
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+    }
+}
+.cart{
+    display: none;
+}
+
+.show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    background-color: #eeeeee;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    right: 0px;
+    top:83px;
+    min-width: 40%;
+    app-carrito{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.btn-inicioSecion{
+    background-color: #201919;
+    color:white;
+}

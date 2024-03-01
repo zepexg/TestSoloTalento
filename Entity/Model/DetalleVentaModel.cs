@@ -1,4 +1,6 @@
-﻿namespace Entity.Model
+﻿using System.Text.Json.Serialization;
+
+namespace Entity.Model
 {
     public class DetalleVentaModel
     {
@@ -6,5 +8,8 @@
         public Guid ArticuloId { get; set; }
         public int Cantidad {  get; set; }
         public decimal Precio { get; set; }
+
+        [JsonIgnore]
+        public VentaModel? Venta { get; set; }
     }
 }

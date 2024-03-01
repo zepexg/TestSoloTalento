@@ -1,0 +1,29 @@
+<div class="cart-wrapper">
+    <article class="cart" *ngFor="let articulo of carrito$|async">
+        <div class="cart-body">
+            <p>{{articulo.codigo}}</p>
+            <div class="cart-body-info">
+                <p>
+                    {{articulo.descripcion}}
+                </p>
+            </div>
+        </div>
+        <div class="cart-total">
+            <p>{{setCurrenciFormat(articulo.precio * articulo.cantidad)}}</p>
+        </div>
+        <div class="cart-buttons">
+            <div class="cart-buttons-operators">
+                <i class="fa-solid fa-minus" (click)="updateCantidad(articulo, 'decremento')"></i>
+                <span>
+                    {{articulo.cantidad}}
+                </span>
+                <i class="fa-solid fa-plus" (click)="updateCantidad(articulo, 'incremento')"></i>
+            </div>
+            <i class="fa-solid fa-trash" (click)="delArticuloFromCart(articulo)"></i>
+        </div>
+    </article>
+    <div class="cart-sum">
+        <p class="cart-sum-total"> Total: {{calculaTotal()}} </p>
+    </div>
+    <button class="cart-btn"  (click)="generarVenta()">Comprar</button>
+</div>

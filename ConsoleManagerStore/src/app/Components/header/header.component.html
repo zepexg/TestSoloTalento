@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <div class="navbar-logo">
+        <i class="fa-solid fa-store fa-2x"></i>
+    </div> 
+    <div class="navbar-title">
+        <h1>Bienvenido a la Tiendita</h1>
+    </div>
+    <div class="navbar-user" *ngIf="(this.usr$|async)?.nombre!==''">
+        <i class="fa-solid fa-user fa-2x"></i>
+        <div class="navbar-user-login">
+            <h2>{{(this.usr$|async)?.nombre}} {{(this.usr$|async)?.apellidos}}</h2>
+            <button class="fa-solid fa-right-to-bracket btn-inicioSecion" (click)="logout()">Cerrar Sesion</button>
+        </div>
+    </div>
+    <div class="navbar-cart" (click)="showCarrito()" *ngIf="(this.usr$|async)?.nombre!==''">
+        <div class="navbar-cart-items">
+            <p>{{(this.carrito$|async)?.length??0}}</p>
+        </div>
+        <i class="fa-solid fa-cart-shopping fa-2x"></i>
+    </div>
+    <div class="navbar-cart" *ngIf="(this.usr$|async)?.nombre===''">
+    </div>
+</nav>
+<div class="cart" [ngClass]="{show:isShow}">
+    <app-carrito />
+</div>

@@ -11,11 +11,12 @@ namespace Data.Repository
         {
             _context = context;
         }
-        public void Add(T Reg)
+        public T Add(T Reg)
         {
             try
             {
-                _context.Set<T>().Add(Reg);
+                var res =_context.Set<T>().Add(Reg);
+                return res.Entity;
             }
             catch (Exception ex)
             {

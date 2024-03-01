@@ -13,10 +13,11 @@ namespace Bussiness.Service
             _unitOfWork = unitOfWork;
         }
 
-        public void AddCliente(ClientesModel cliente)
+        public ClientesModel AddCliente(ClientesModel cliente)
         {
-            _unitOfWork.Clientes.Add(cliente);
+            var res = _unitOfWork.Clientes.Add(cliente);
             _unitOfWork.Guardar();
+            return res;
         }
 
         public void EditCliente(ClientesModel cliente)
@@ -39,6 +40,12 @@ namespace Bussiness.Service
         public List<ClientesModel> GetCliente(Guid cliente) {
             Expression<Func<ClientesModel, bool>> param = entity => entity.ID == cliente;
             return _unitOfWork.Clientes.GetById(param);
+        }
+
+        public ClientesModel? GetLogin(string usr, string pwd)
+        {
+            Expression<Func<ClientesModel, bool>> param = entity => entity.Usuario == usr && entity.Contraseña == pwd;
+            return _unitOfWork.Clientes.GetById(param).FirstOrDefault();
         }
     }
 }
